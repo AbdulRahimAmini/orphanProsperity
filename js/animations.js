@@ -1,89 +1,78 @@
-// Intersection Observer for scroll animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-        }
+// انیمیشن‌های صفحه درباره ما
+document.addEventListener('DOMContentLoaded', function() {
+    // انیمیشن اسکرول نرم
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
-}, observerOptions);
-
-// Observe elements when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    // Index page elements
-    const missionCard = document.querySelector('.mission-card');
-    const missionImage = document.querySelector('.mission-section img');
-    const impactCards = document.querySelectorAll('.impact-card');
-    const galleryItems = document.querySelectorAll('.gallery-item');
     
-    // About page elements
-    const storyCard = document.querySelector('.story-card');
-    const storyImage = document.querySelector('.story-section img');
+    // انیمیشن برای کارت‌های تیم هنگام اسکرول
     const teamCards = document.querySelectorAll('.team-card');
     
-    // Projects page elements
-    const projectCards = document.querySelectorAll('.project-card');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
     
-    // Impact page elements
-    const impactStoryCard = document.querySelector('.impact-story-card');
-    const impactStoryImage = document.querySelector('.impact-story-section img');
-    const achievementCards = document.querySelectorAll('.achievement-card');
-    
-    // Sponsorship page elements
-    const sponsorshipCard = document.querySelector('.sponsorship-card');
-    const sponsorshipImage = document.querySelector('.sponsorship-details-section img');
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
-    
-    // Donation page elements
-    const donationCards = document.querySelectorAll('.donation-card');
-    
-    // Add to observer with delays
-    if (missionCard) observer.observe(missionCard);
-    if (missionImage) observer.observe(missionImage);
-    if (storyCard) observer.observe(storyCard);
-    if (storyImage) observer.observe(storyImage);
-    if (impactStoryCard) observer.observe(impactStoryCard);
-    if (impactStoryImage) observer.observe(impactStoryImage);
-    if (sponsorshipCard) observer.observe(sponsorshipCard);
-    if (sponsorshipImage) observer.observe(sponsorshipImage);
-    
-    // Cards with staggered delays
-    impactCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
+    teamCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s, transform 0.6s';
         observer.observe(card);
     });
     
-    teamCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
-        observer.observe(card);
+    // انیمیشن برای بخش داستان
+    const storySection = document.querySelector('.story-section');
+    if (storySection) {
+        const storyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelector('.story-card').style.animation = 'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        storyObserver.observe(storySection);
+    }
+    
+    // تغییر رنگ نوار ناوبری هنگام اسکرول
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+            navbar.style.backgroundColor = '#f8f9fa';
+            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        }
     });
     
-    projectCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
-        observer.observe(card);
-    });
-    
-    achievementCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
-        observer.observe(card);
-    });
-    
-    testimonialCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
-        observer.observe(card);
-    });
-    
-    donationCards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
-        observer.observe(card);
-    });
-    
-    galleryItems.forEach((item, index) => {
-        item.style.transitionDelay = `${index * 0.05}s`;
-        observer.observe(item);
-    });
+    // انیمیشن برای تیتر اصلی
+    const heroTitle = document.querySelector('.hero-section h1');
+    if (heroTitle) {
+        heroTitle.style.opacity = '0';
+        heroTitle.style.transform = 'translateY(-20px)';
+        
+        setTimeout(() => {
+            heroTitle.style.transition = 'opacity 0.8s, transform 0.8s';
+            heroTitle.style.opacity = '1';
+            heroTitle.style.transform = 'translateY(0)';
+        }, 300);
+    }
 });
