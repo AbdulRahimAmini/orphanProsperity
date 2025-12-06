@@ -1,106 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orphan Prosperity | About</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>موفقیت یتیمان | درباره ما</title>
+    
+    <!-- فونت فارسی وزیرمتن -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- بوت‌استرپ فارسی (نسخه RTL) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    
+    <!-- فایل‌های استایل شخصی -->
     <link href="css/shared.css" rel="stylesheet">
     <link href="css/about.css" rel="stylesheet">
+    
+    <style>
+        /* تنظیمات فونت و راست‌چین */
+        * {
+            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            direction: rtl;
+            text-align: right;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+        }
+        
+        .navbar-nav .nav-item {
+            margin-left: 15px;
+            margin-right: 0;
+        }
+        
+        .me-2 {
+            margin-left: 0.5rem !important;
+            margin-right: 0 !important;
+        }
+        
+        .ms-auto {
+            margin-right: auto !important;
+            margin-left: 0 !important;
+        }
+        
+        .text-muted {
+            color: #6c757d !important;
+        }
+        
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- نوار ناوبری -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="assets/logo3.jpeg" alt="Orphan Prosperity Logo" height="80" class="me-2">
+                <img src="assets/logo3.jpeg" alt="لوگو موفقیت یتیمان" height="80" class="me-2">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="impact.html">Impact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sponsorship.html">Sponsorship</a></li>
-                    <li class="nav-item"><a class="nav-link" href="donation.html">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">خانه</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">درباره ما</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">پروژه‌ها</a></li>
+                    <li class="nav-item"><a class="nav-link" href="impact.html">تأثیرات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sponsorship.html">حامی‌ها</a></li>
+                    <li class="nav-item"><a class="nav-link" href="donation.html">کمک مالی</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Hero Section -->
+
+    <!-- بخش اصلی -->
     <section class="hero-section">
         <div class="container text-center">
-            <h1 class="section-title">About Us</h1>
-            <p class="lead text-muted">Learn more about our mission, our journey, and the dedicated team behind Orphan Prosperity.</p>
+            <h1 class="section-title">درباره ما</h1>
+            <p class="lead text-muted">با مأموریت، مسیر و تیم متعهد "موفقیت یتیمان" آشنا شوید</p>
         </div>
     </section>
 
-    <!-- Story Section -->
+    <!-- بخش داستان ما -->
     <section class="story-section">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-6">
                     <div class="story-card">
-                        <h2 class="mb-3">Our Story</h2>
+                        <h2 class="mb-3">داستان ما</h2>
                         <p>
-                            Founded in Afghanistan, Orphan Prosperity was created to address the urgent needs of orphans and vulnerable children. Our goal is to empower them through education, nutrition, and care, ensuring they grow into strong and self-reliant individuals.
+                            موفقیت یتیمان در افغانستان تأسیس شد تا به نیازهای فوری کودکان یتیم و آسیب‌پذیر رسیدگی کند. هدف ما توانمندسازی آنان از طریق آموزش، تغذیه و مراقبت است تا به افرادی قوی و مستقل تبدیل شوند.
                         </p>
                         <p>
-                            Our dedicated team works tirelessly to provide these children with a nurturing environment and opportunities to succeed.
+                            تیم متعهد ما بی‌وقفه کار می‌کند تا برای این کودکان محیطی پرورشی و فرصت‌هایی برای موفقیت فراهم کند.
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="assets/WhatsApp Image 2025-08-04 at 4.32.46 AM.jpeg" alt="About Us Image" class="img-fluid rounded">
+                    <img src="assets/WhatsApp Image 2025-08-04 at 4.32.46 AM.jpeg" alt="تصویر درباره ما" class="img-fluid rounded">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
+    <!-- بخش تیم -->
     <section class="team-section">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title">Meet Our Team</h2>
-                <p class="lead text-muted">Dedicated individuals working to transform lives</p>
+                <h2 class="section-title">با تیم ما آشنا شوید</h2>
+                <p class="lead text-muted">افراد متعهدی که برای تغییر زندگی‌ها تلاش می‌کنند</p>
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="team-card">
-                        <img src="assets/WhatsApp Image 2025-08-04 at 4.32.52 AM.jpeg" alt="Team Member" class="img-fluid rounded mb-3" width="200">
-                        <h5>Founder</h5>
-                        <p class="text-muted">Visionary educator and humanitarian.</p>
+                        <img src="assets/WhatsApp Image 2025-08-04 at 4.32.52 AM.jpeg" alt="عضو تیم" class="img-fluid rounded mb-3" width="200">
+                        <h5>بنیان‌گذار</h5>
+                        <p class="text-muted">معلمی دوراندیش و بشردوست</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="team-card">
-                        <img src="assets/WhatsApp Image 2025-08-04 at 4.32.53 AM.jpeg" alt="Team Member" class="img-fluid rounded mb-3" width="200">
-                        <h5>Program Director</h5>
-                        <p class="text-muted">Leads impactful community projects.</p>
+                        <img src="assets/WhatsApp Image 2025-08-04 at 4.32.53 AM.jpeg" alt="عضو تیم" class="img-fluid rounded mb-3" width="200">
+                        <h5>مدیر برنامه‌ها</h5>
+                        <p class="text-muted">رهبری پروژه‌های تأثیرگذار جامعه</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="team-card">
-                        <img src="assets/WhatsApp Image 2025-08-04 at 4.32.57 AM.jpeg" alt="Team Member" class="img-fluid rounded mb-3" width="200">
-                        <h5>Volunteer Coordinator</h5>
-                        <p class="text-muted">Mobilizes and supports our volunteers.</p>
+                        <img src="assets/WhatsApp Image 2025-08-04 at 4.32.57 AM.jpeg" alt="عضو تیم" class="img-fluid rounded mb-3" width="200">
+                        <h5>هماهنگ‌کننده داوطلبان</h5>
+                        <p class="text-muted">سازماندهی و پشتیبانی از داوطلبان ما</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- پاصفحه -->
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
-            <p>&copy; 2024 Orphan Prosperity Charity | All Rights Reserved</p>
+            <p>&copy; ۱۴۰۳ خیریه موفقیت یتیمان | کلیه حقوق محفوظ است</p>
         </div>
     </footer>
 
+    <!-- اسکریپت‌ها -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/animations.js"></script>
+    
+    <script>
+        // اسکریپت برای بهبود نمایش فارسی
+        document.addEventListener('DOMContentLoaded', function() {
+            // اضافه کردن کلاس RTL به body برای اطمینان
+            document.body.classList.add('rtl');
+            
+            // بهبود نمایش اعداد
+            const persianNumbers = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+            function toPersianNumber(num) {
+                return num.toString().replace(/\d/g, function(d) {
+                    return persianNumbers[parseInt(d)];
+                });
+            }
+            
+            // تبدیل اعداد در کپی‌رایت
+            const copyright = document.querySelector('footer p');
+            if (copyright) {
+                copyright.innerHTML = copyright.innerHTML.replace(/\d+/g, toPersianNumber);
+            }
+        });
+    </script>
 </body>
 </html>
